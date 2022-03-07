@@ -14,10 +14,10 @@ def updateCSVs(csvUrlList : Dict[str, str]):
 
 initialCsv = "https://www.data.gouv.fr/fr/organizations/sante-publique-france/datasets-resources.csv"
 
-URLCSVs = {"1" : "https://static.data.gouv.fr/resources/taux-dincidence-de-lepidemie-de-covid-19/20220220-190603/sp-ti-tp-7j-fra-2022-02-20-19h06.csv", "2" : "https://static.data.gouv.fr/resources/taux-dincidence-de-lepidemie-de-covid-19/20220220-190606/sp-ti-tp-7j-reg-2022-02-20-19h06.csv"}
+URLCSVs = {"1" : "", "2" : ""}
 
 retrieveCSV(initialCsv, "initialCSV")
-updateCSVs(URLCSVs)
+# updateCSVs(URLCSVs)
 
 # mydict = {"key":"value", "key2":"value2"}
 
