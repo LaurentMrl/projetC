@@ -11,6 +11,7 @@ def get_spPosQuotDeps(db: Session, skip: int = 0, limit: int = 500):
 
 def create_spPosQuotDep(db: Session, spPosQuotDep: schemas.SpPosQuotDepCreate):
     db_spPosQuotDep = models.SpPosQuotDep(dep=spPosQuotDep.dep, jour=spPosQuotDep.jour, P=spPosQuotDep.P, T=spPosQuotDep.T, cl_age90=spPosQuotDep.cl_age90, pop=spPosQuotDep.pop)
+    db.add(db_spPosQuotDep)
     db.commit()
     db.refresh(db_spPosQuotDep)
     return db_spPosQuotDep
@@ -24,6 +25,7 @@ def get_spPeTbQuotFras(db: Session, skip: int = 0, limit: int = 500):
 
 def create_spPeTbQuotFra(db: Session, spPeTbQuotFra: schemas.SpPeTbQuotFraCreate):
     db_spPeTbQuotFra = models.SpPeTbQuotFra(fra=spPeTbQuotFra.fra, jour=spPeTbQuotFra.jour, P_f=spPeTbQuotFra.P_f, P_h=spPeTbQuotFra.P_h, P=spPeTbQuotFra.P, pop_f=spPeTbQuotFra.pop_f, pop_h=spPeTbQuotFra.pop_h, cla_age90=spPeTbQuotFra.cl_age90, pop=spPeTbQuotFra.pop)
+    db.add(db_spPeTbQuotFra)
     db.commit()
     db.refresh(db_spPeTbQuotFra)
     return db_spPeTbQuotFra
@@ -36,6 +38,7 @@ def get_spPeTbQuotDeps(db: Session, skip: int = 0, limit: int = 500):
 
 def create_spPeTbQuotDep(db: Session, spPeTbQuotDep: schemas.SpPeTbQuotDepCreate):
     db_spPeTbQuotDep = models.SpPeTbQuotDep(dep=spPeTbQuotDep.dep, jour=spPeTbQuotDep.jour, P=spPeTbQuotDep.P, cl_age90=spPeTbQuotDep.cl_age90, pop=spPeTbQuotDep.pop)
+    db.add(db_spPeTbQuotDep)
     db.commit()
     db.refresh(db_spPeTbQuotDep)
     return db_spPeTbQuotDep
@@ -48,6 +51,7 @@ def get_spCapaQuotFras(db: Session, skip: int = 0, limit: int = 500):
 
 def create_spCapaQuotFra(db: Session, spCapaQuotFra: schemas.SpCapaQuotFraCreate):
     db_spCapaQuotFra = models.SpCapaQuotFra(fra=spCapaQuotFra.fra, jour=spCapaQuotFra.jour, pop=spCapaQuotFra.pop, T=spCapaQuotFra.T)
+    db.add(db_spCapaQuotFra)
     db.commit()
     db.refresh(db_spCapaQuotFra)
     return db_spCapaQuotFra
@@ -60,6 +64,7 @@ def get_spCapaQuotDeps(db: Session, skip: int = 0, limit: int = 500):
 
 def create_spCapaQuotDep(db: Session, spCapaQuotDep: schemas.SpCapaQuotDepCreate):
     db_spCapaQuotDep = models.SpCapaQuotDep(dep=spCapaQuotDep.dep, jour=spCapaQuotDep.jour, pop=spCapaQuotDep.pop, T=spCapaQuotDep.T)
+    db.add(db_spCapaQuotDep)
     db.commit()
     db.refresh(db_spCapaQuotDep)
     return db_spCapaQuotDep
@@ -72,6 +77,7 @@ def get_flashFras(db: Session, skip: int = 0, limit: int = 500):
 
 def create_flashFra(db: Session, flashFra: schemas.FlashFraCreate):
     db_flashFra = models.FlashFra(fra=flashFra.fra, deb_periode=flashFra.deb_periode, flash_variants=flashFra.flash_variants, n=flashFra.n, n_tot=flashFra.n_tot)
+    db.add(db_flashFra)
     db.commit()
     db.refresh(db_flashFra)
     return db_flashFra
