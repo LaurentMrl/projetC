@@ -1,5 +1,7 @@
 from typing import Dict
+
 import requests
+
 
 def retrieveCSV(csv_url : str, save_name : str) -> None:
     req = requests.get(csv_url)
