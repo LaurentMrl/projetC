@@ -3,7 +3,7 @@ from typing import Dict
 import pandas as pd
 import requests
 
-df = pd.read_csv('initialCSV.csv', usecols=['url'], sep=';')
+df = pd.read_csv('./ressources/csv/initialCSV.csv', usecols=['url'], sep=';')
 
 searchList = [["https://static.data.gouv.fr/resources/donnees-relatives-aux-resultats-des-tests-virologiques-covid-19",
                "sp-pos-quot-fra"],
@@ -34,7 +34,7 @@ for url in df["url"]:
 def retrieveCSV(csv_url: str, save_name: str) -> None:
     req = requests.get(csv_url)
     url_content = req.content
-    csv_file = open(f'{save_name}.csv', 'wb')
+    csv_file = open(f'./ressources/csv/{save_name}.csv', 'wb')
     csv_file.write(url_content)
     csv_file.close()
 

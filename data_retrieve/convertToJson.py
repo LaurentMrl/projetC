@@ -8,7 +8,7 @@ files = ["capacite-analytique-de-tests-virologiques-dans-le-cadre-de-lepidemie-c
          "variants-circulants-indicateurs-issus-du-sequencage-emergen-flash-fra"]
 
 for file in files:
-    csvFullFile = f"{file}.csv"
-    jsonFullFile = f"{file}.json"
+    csvFullFile = f"./ressources/csv/{file}.csv"
+    jsonFullFile = f"./ressources/json/{file}.json"
     df = pd.read_csv(csvFullFile)
     df.to_json(jsonFullFile)
