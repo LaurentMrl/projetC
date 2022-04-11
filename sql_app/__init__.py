@@ -1,4 +1,4 @@
-#https://fastapi.tiangolo.com/tutorial/sql-databases/
+# https://fastapi.tiangolo.com/tutorial/sql-databases/
 
-#launch
+# launch
 ##uvicorn sql_app.main:app --reload

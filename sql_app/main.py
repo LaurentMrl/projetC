@@ -65,6 +65,7 @@ def rowNumber_spPeTbQuotFra(db: Session = Depends(get_db)):
     rows = db.query(models.SpPeTbQuotFra).count()
     return rows
 
+
 @app.get("/db/getOne_spPeTbQuotDep/{spPeTbQuotDep_id}", response_model=schemas.SpPeTbQuotDep)
 def readOne_spPeTbQuotDep(spPeTbQuotDep_id: int, db: Session = Depends(get_db)):
     spPeTbQuotDep = crud.get_spPeTbQuotDep(db, spPeTbQuotDep_id=spPeTbQuotDep_id)
@@ -87,6 +88,7 @@ def create_spPeTbQuotDep(spPeTbQuotDepCreate: schemas.SpPeTbQuotDepCreate, db: S
 def rowNumber_spPeTbQuotDep(db: Session = Depends(get_db)):
     rows = db.query(models.SpPeTbQuotDep).count()
     return rows
+
 
 @app.get("/db/getOne_spCapaQuotFra/{spCapaQuotFra_id}", response_model=schemas.SpCapaQuotFra)
 def readOne_spCapaQuotFra(spCapaQuotFra_id: int, db: Session = Depends(get_db)):
@@ -158,7 +160,3 @@ def create_flashFra(flashFraCreate: schemas.FlashFraCreate, db: Session = Depend
 def rowNumber_flashFra(db: Session = Depends(get_db)):
     rows = db.query(models.FlashFra).count()
     return rows
-
-
-
-
