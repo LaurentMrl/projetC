@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 files = ["capacite-analytique-de-tests-virologiques-dans-le-cadre-de-lepidemie-covid-19-sp-capa-quot-dep",
          "capacite-analytique-de-tests-virologiques-dans-le-cadre-de-lepidemie-covid-19-sp-capa-quot-fra",
@@ -9,6 +10,8 @@ files = ["capacite-analytique-de-tests-virologiques-dans-le-cadre-de-lepidemie-c
 
 for file in files:
     csvFullFile = f"./ressources/csv/{file}.csv"
+    if not os.path.exists('./ressources/json'):
+        os.makedirs('./ressources/json')
     jsonFullFile = f"./ressources/json/{file}.json"
     df = pd.read_csv(csvFullFile)
     df.to_json(jsonFullFile)
