@@ -1,7 +1,4 @@
-import unittest
-import pathlib as pl
 import os
-import black
 import time
 
 # class TestCaseBase(unittest.TestCase):
@@ -14,23 +11,23 @@ import time
 #         path = pl.Path("a/b/c.txt")
 #         self.assertIsFile(path)
 
-# Je check si le csv à bien été modifié il y a moins de 10 secondes, si oui on le considère à jour, sinon non.
-def checkCSVUpdateTime(fileName):
-    path = rf"C:\Users\laure\Documents\GithubPro\PROJETC\{fileName}.csv"
+# Check if csv got edited 10 seconds ago, yes == updated else not.
+def check_csv_update_time(file_name: str):
+    path = rf"C:\Users\laure\Documents\GithubPro\PROJETC\{file_name}.csv"
     # open(path, 'w+')
-    fileTime = os.path.getmtime(path)
-    nowTime = time.time()  # returns the unix timestamp
-    print(f"fileTime : {fileTime}")
-    print(f"nowTime : {nowTime}")
-    lastUpdateTime = abs(nowTime - fileTime)
-    if nowTime == fileTime:
-        print(f"nowTime and fileTIme are the same : {fileTime}")
-    if lastUpdateTime <= 10:
-        print(f"The file {fileName} has been updated !")
+    file_time = os.path.getmtime(path)
+    now_time = time.time()  # returns the unix timestamp
+    print(f"file_time : {file_time}")
+    print(f"now_time : {now_time}")
+    last_update_time = abs(now_time - file_time)
+    if now_time == file_time:
+        print(f"now_time and file_time are the same : {file_time}")
+    if last_update_time <= 10:
+        print(f"The file {file_name} has been updated !")
     else:
         print(
-            f"The file {fileName} has not been updated! Last time was {lastUpdateTime} secs ago"
+            f"The file {file_name} has not been updated! Last time was {last_update_time} secs ago"
         )
 
 
-checkCSVUpdateTime("ouais")
+check_csv_update_time("ouais")
