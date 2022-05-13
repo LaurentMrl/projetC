@@ -1,9 +1,7 @@
-import os
+"""
+Un truc qui import tout et lance la récup des données
+"""
 
 import recupDonnees
 import getCSVURL
 import convertToJson
-
-# os.system("recupDonnees.py 1")
-# os.system("getCSVURL.py")
-# os.system("convertToJson.py 1")
