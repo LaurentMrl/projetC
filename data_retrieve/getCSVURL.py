@@ -56,6 +56,6 @@ def retrieveCSV(csv_url: str, save_name: str) -> None:
     csv_file.close()
 
 
-def updateCSVs(csvUrlList: Dict[str, str]):
+def updateCSVs(csvUrlList: Dict[str, str]) -> None:
     for file in csvUrlList:
         retrieveCSV(csv_url=csvUrlList[file], save_name=file)
