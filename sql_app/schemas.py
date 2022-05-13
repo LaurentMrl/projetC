@@ -23,6 +23,30 @@ class SpPosQuotDep(SpPosQuotDepBase):
         orm_mode = True
 
 
+class SpPosQuotFraBase(BaseModel):
+    fra: str
+    jour: date
+    P_f: int
+    P_h: int
+    P: int
+    T_f: int
+    T_h: int
+    T: int
+    cl_age90: int
+    pop: int
+
+
+class SpPosQuotFraCreate(SpPosQuotFraBase):
+    pass
+
+
+class SpPosQuotFra(SpPosQuotFraBase):
+    id: int
+
+    class Config:
+        orm_mode = True
+
+
 class SpPeTbQuotFraBase(BaseModel):
     fra: str
     jour: date

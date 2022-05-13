@@ -15,6 +15,22 @@ class SpPosQuotDep(Base):
     pop = Column(Integer, index=True)
 
 
+class SpPosQuotFra(Base):
+    __tablename__ = "sp_pos_quot_fra"
+
+    id = Column(Integer, primary_key=True, index=True)
+    fra = Column(String, index=True)
+    jour = Column(Date, index=True)
+    P_f = Column(Integer, index=True)
+    P_h = Column(Integer, index=True)
+    P = Column(Integer, index=True)
+    T_f = Column(Integer, index=True)
+    T_h = Column(Integer, index=True)
+    T = Column(Integer, index=True)
+    cl_age90 = Column(Integer, index=True)
+    pop = Column(Integer, index=True)
+
+
 class SpPeTbQuotFra(Base):
     __tablename__ = "sp_pe_tb_quot_fra"
 

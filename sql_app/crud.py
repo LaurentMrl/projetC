@@ -30,6 +30,37 @@ def create_spPosQuotDep(db: Session, spPosQuotDep: schemas.SpPosQuotDepCreate):
     return db_spPosQuotDep
 
 
+def get_spPosQuotFra(db: Session, spPosQuotFra_id: int):
+    return (
+        db.query(models.SpPosQuotFra)
+        .filter(models.SpPosQuotFra.id == spPosQuotFra_id)
+        .first()
+    )
+
+
+def get_spPosQuotFras(db: Session, skip: int = 0, limit: int = 500):
+    return db.query(models.SpPosQuotFra).offset(skip).limit(limit).all()
+
+
+def create_spPosQuotFra(db: Session, spPosQuotFra: schemas.SpPosQuotFraCreate):
+    db_spPosQuotFra = models.SpPosQuotFra(
+        fra=spPosQuotFra.fra,
+        jour=spPosQuotFra.jour,
+        P_f=spPosQuotFra.P_f,
+        P_h=spPosQuotFra.P_h,
+        P=spPosQuotFra.P,
+        T_f=spPosQuotFra.T_f,
+        T_h=spPosQuotFra.T_h,
+        T=spPosQuotFra.T,
+        cl_age90=spPosQuotFra.cl_age90,
+        pop=spPosQuotFra.pop,
+    )
+    db.add(db_spPosQuotFra)
+    db.commit()
+    db.refresh(db_spPosQuotFra)
+    return db_spPosQuotFra
+
+
 def get_spPeTbQuotFra(db: Session, spPeTbQuotFra_id: int):
     return (
         db.query(models.SpPeTbQuotFra)
