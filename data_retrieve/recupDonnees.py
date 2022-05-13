@@ -10,7 +10,3 @@ def retrieveCSV(csv_url: str, save_name: str) -> None:
     csv_file = open(f"./ressources/csv/{save_name}.csv", "wb")
     csv_file.write(url_content)
     csv_file.close()
-
-
-initialCsv = "https://www.data.gouv.fr/fr/organizations/sante-publique-france/datasets-resources.csv"
-retrieveCSV(initialCsv, "initialCSV")

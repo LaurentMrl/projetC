@@ -59,7 +59,3 @@ def retrieveCSV(csv_url: str, save_name: str) -> None:
 def updateCSVs(csvUrlList: Dict[str, str]):
     for file in csvUrlList:
         retrieveCSV(csv_url=csvUrlList[file], save_name=file)
-
-
-for index in range(len(resultList)):
-    retrieveCSV(resultList[index - 1], names[index - 1])
