@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-import models, schemas
+from . import models, schemas
 
 
 def get_spPosQuotDep(db: Session, spPosQuotDep_id: int):

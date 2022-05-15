@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, Float
 
-from database import Base
+from .database import Base
 
 
 class SpPosQuotDep(Base):
